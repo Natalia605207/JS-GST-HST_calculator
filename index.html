@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Sales Tax Calculator</title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+   </head>
+   <body>
+      <div class="top column">
+         <img src="assets/flag.png" alt="flag">
+         <h1>Canada GST/HST Calculator</h1>
+         <p class="year">2024</p>
+      </div>
+      <div class="main-container">
+      <div class="tabBtns">
+         <button id="straight" class="tabBtn active">GST/HST Calculator</button>
+         <button id="reverse" class="tabBtn">Reverse GST/HST Calculator</button>
+      </div>
+      <div class="content">
+         <div class="content-container">
+         <form class="column">
+            <label class="style">Amount before taxes</label>
+            <input id="amountBeforeTaxes" type="text" placeholder="$ 00.00">
+            <label class="style">Province</label>
+            <select id="chooseProvince">
+               <option value="0.05">Alberta (5%)</option>
+               <option value="0.12">British Columbia (12%)</option>
+               <option value="0.12">Manitoba (12%)</option>
+               <option value="0.15">New Brunswick (15%)</option>
+               <option value="0.15">Newfoundland and Labrador (15%)</option>
+               <option value="0.05">Northwest Territories (5%)</option>
+               <option value="0.15">Nova Scotia (15%)</option>
+               <option value="0.05">Nunavut (5%)</option>
+               <option value="0.13" selected>Ontario (13%)</option>
+               <option value="0.15">Prince Edward Island (15%)</option>
+               <option value="0.14975">Quebec (14.975%)</option>
+               <option value="0.11">Saskatchewan (11%)</option>
+               <option value="0.05">Yukon (5%)</option>
+            </select>
+            <button id="btn">Calculate</button>
+         </form>
+            <div class="row-small">
+               <p class="plus">Total after taxes</p>
+               <div class="sum">
+                  <span class="dollar">$</span>
+                  <span id="finalSumAfterTaxes"></span>
+               </div>
+            </div>
+            <div class="row-small">
+               <p class="plus">Total taxes</p>
+               <div class="sum">
+                  <span class="dollar">$</span>
+                  <span id="finalTaxes"></span>
+               </div>
+            </div>
+         </div>
+         <div class="content-container hide">
+            <form class="column">
+            <label class="style">Total after taxes</label>
+            <input id="amountAfterTaxes" type="text" placeholder="$ 00.00">
+            <label class="style">Province</label>
+            <select id="chooseYourProvince">
+               <option value="12">British Columbia (12%)</option>
+               <option value="12">Manitoba (12%)</option>
+               <option value="15">New Brunswick (15%)</option>
+               <option value="15">Newfoundland and Labrador (15%)</option>
+               <option value="5">Northwest Territories (5%)</option>
+               <option value="15">Nova Scotia (15%)</option>
+               <option value="5">Nunavut (5%)</option>
+               <option value="13" selected>Ontario (13%)</option>
+               <option value="15">Prince Edward Island (15%)</option>
+               <option value="14.975">Quebec (14.975%)</option>
+               <option value="11">Saskatchewan (11%)</option>
+               <option value="5">Yukon (5%)</option>
+            </select>
+            <button id="cta">Calculate</button>
+            </form>
+            <div class="row-small">
+               <p class="plus">Amount before taxes</p>
+               <div class="sum">
+                  <span class="dollar">$</span>
+                  <span id="finalSumBeforeTaxes"></span>
+               </div>
+            </div>
+            <div class="row-small">
+               <p class="plus">Deducted taxes</p>
+               <div class="sum">
+                  <span class="dollar">$</span>
+                  <span id="deductedTaxes"></span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="index.js"></script>
+   </body>
+</html>
